@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <TargetFrameworks>net7.0;net48</TargetFrameworks>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Authors>sirrandoo</Authors>
+        <Description>A performant irc message parser with support for tags.</Description>
+        <Copyright>MIT Copyright (c) 2023 SirRandoo</Copyright>
+        <RepositoryUrl>https://github.com/sirrandoo/commonlib.ircparser</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="NetEscapades.EnumGenerators" Version="1.0.0-beta08"/>
+        <PackageReference Include="Polyfill" Version="1.26.0" Condition="'$(TargetFramework)' == 'net48'">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="System.Memory" Version="4.5.5" Condition="'$(TargetFramework)' == 'net48'"/>
+    </ItemGroup>
+
+</Project>
